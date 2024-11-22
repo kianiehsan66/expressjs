@@ -8,7 +8,6 @@ app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
 app.get("/", async (req, res) => {
-  res.set("Cache-Control", "public, max-age=300");
   const currentTime = new Date().toLocaleString();
   res.send(`
     <!DOCTYPE html>
