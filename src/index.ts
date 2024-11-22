@@ -8,6 +8,8 @@ app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
 app.get("/", async (req, res) => {
+  res.set("Cache-Control", "public, max-age=60");
+  const currentTime = new Date().toLocaleString();
   res.send(`
     <!DOCTYPE html>
     <html lang="en">
@@ -19,6 +21,7 @@ app.get("/", async (req, res) => {
       <body>
         <h1>Hello, World!</h1>
         <p>This is a simple HTML response from an Express app.</p>
+         <p>Current Server Time: ${currentTime}</p>
       </body>
     </html>
   `);
