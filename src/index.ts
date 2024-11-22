@@ -9,7 +9,7 @@ app.use(express.text({ type: "text/html" }));
 
 app.get("/", async (req, res) => {
   const currentTime = new Date().toLocaleString();
-  res.status(501);
+  res.status(501).send();
 });
 
 app.listen(port, () => {
