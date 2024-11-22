@@ -8,7 +8,6 @@ app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
 app.get("/", async (req, res) => {
-  res.set("set-cookie", "blah=60");
   const currentTime = new Date().toLocaleString();
   res.send(`
     <!DOCTYPE html>
