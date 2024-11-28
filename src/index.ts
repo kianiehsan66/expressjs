@@ -29,6 +29,8 @@ app.get("/", (req, res) => {
     "cookie3=value3; Path=/; SameSite=Strict",
     "cookie4=value4; Path=/; Max-Age=3600",
     "cookie5=value5; Path=/; Domain=localhost",
+    "cookie1=value1;  HttpOnly",
+    "cookie1=value1; Path=/; ",
   ]);
 
   // Send the HTML content as the response
