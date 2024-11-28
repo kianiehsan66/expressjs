@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
     "cookie1=value1;  HttpOnly",
     "cookie1=value1; Path=/; ",
   ]);
-
+  res.set("Cache-Control", "public, max-age=3600");
   // Send the HTML content as the response
   res.status(200).send(htmlContent);
 });
